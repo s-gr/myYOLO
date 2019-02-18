@@ -1,20 +1,6 @@
-import os
-from yolo_utils import read_classes
+from my_utils import get_labels
 
+my_dict = get_labels('dataset/train/train.yaml')
 
-
-with open('dataset/train/train.yaml', 'r') as file:
-    my_string = file.readlines()
-
-print(len(my_string))
-
-for line in range(len(my_string)):
-    print(my_string[line])
-    if 'label' in my_string[line]:
-        if '}' not in my_string[line]:
-
-
-# for line in my_string:
-#     if 'label:' in line:
-#         line = line.replace(',', '').replace('- {label:', '').replace(':', '')
-#         print(line.split())
+my_str='207384'
+print(my_str + ': ' + str(len(my_dict[my_str]) // 6))
